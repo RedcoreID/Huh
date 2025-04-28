@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: rclone-webdav
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: RCLONE_CONFIG_Hstorage_TYPE
+        value: drive
+      - key: RCLONE_CONFIG_Hstorage_TOKEN
+        sync: false
+      - key: PORT
+        value: 8000
